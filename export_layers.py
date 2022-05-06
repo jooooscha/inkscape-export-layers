@@ -270,7 +270,7 @@ class LayerExport(inkex.Effect):
         from PIL import Image
         image = Image.open(png_file)
         image = image.convert('RGB')
-        image.save(output_file, quality=95)
+        image.save(output_file, quality=200)
 
         return output_file
 
