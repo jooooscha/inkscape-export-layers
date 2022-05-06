@@ -120,21 +120,22 @@ class LayerExport(inkex.Effect):
 
             layer_id = layer.attrib['id']
             layer_label = layer.attrib[label_attrib_name]
+            layer_type = EXPORT
 
-            if layer_label.lower().startswith(FIXED):
-                layer_type = FIXED
-                layer_label = layer_label[len(FIXED):].lstrip()
-            elif layer_label.lower().startswith(F):
-                layer_type = FIXED
-                layer_label = layer_label[len(F):].lstrip()
-            elif layer_label.lower().startswith(EXPORT):
-                layer_type = EXPORT
-                layer_label = layer_label[len(EXPORT):].lstrip()
-            elif layer_label.lower().startswith(E):
-                layer_type = EXPORT
-                layer_label = layer_label[len(E):].lstrip()
-            else:
-                continue
+            #  if layer_label.lower().startswith(FIXED):
+            #      layer_type = FIXED
+            #      layer_label = layer_label[len(FIXED):].lstrip()
+            #  elif layer_label.lower().startswith(F):
+            #      layer_type = FIXED
+            #      layer_label = layer_label[len(F):].lstrip()
+            #  elif layer_label.lower().startswith(EXPORT):
+            #      layer_type = EXPORT
+            #      layer_label = layer_label[len(EXPORT):].lstrip()
+            #  elif layer_label.lower().startswith(E):
+            #      layer_type = EXPORT
+            #      layer_label = layer_label[len(E):].lstrip()
+            #  else:
+            #      continue
 
             layer_list.append(Layer(layer_id, layer_label, layer_type))
 
@@ -175,7 +176,7 @@ class LayerExport(inkex.Effect):
 
                 layer_name = layer.label
                 if self.options.enumerate:
-                    layer_name = '{:03d}_{}'.format(counter + 1, layer_name)
+                    layer_name = '{}_{:03d}'.format(layer_name, counter + 1)
 
                 export_list.append(Export(visible_layers, layer_name))
             else:

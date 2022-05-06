@@ -23,10 +23,10 @@
        - <param name="help" type="description">  - Its directory will be the '/path/to/output/directory/'.   </param>
        - <param name="help" type="description">  - Its filename will start with [prefix] (leave filename empty for no prefix)   </param> -->
     <param name="help" type="description">Output path. Default: '~/'</param>
-    <param name="output-source" type="path"></param>
+    <param name="output-source" type="path" _gui-text=" ">~/</param>
     <param name="help" type="description"></param>
     <param name="help" type="description">Sub-directory for layer. Trailing '/' required</param>
-    <param name="output-subdir" type="string">layers/</param>
+    <param name="output-subdir" type="string" _gui-text=" ">layers/</param>
     <param name="help" type="description">     </param>
     <param name="enumerate" type="boolean" _gui-text="Add layer {number} to filenames ('001', '002', etc.)">false</param>
     <param name="help" type="description">     </param>
